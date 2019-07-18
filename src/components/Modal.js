@@ -5,24 +5,20 @@ class Modal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            modalValue: this.props.chooseCity,
-            show: this.props.show
+            modalValue: this.props.chooseCity
         };
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(e) {
+    handleChange = (e) => {
         this.setState({modalValue: e.target.value});
-    }
+    };
 
-    handleSubmit(e) {
+    handleSubmit = (e) => {
         e.preventDefault();
         this.props.onCityChoose(this.state.modalValue);
-    }
+    };
 
     render() {
-        if (this.props.show === true) {
             return (
                 <div className="modal-wrapper">
                     <div className="modal">
@@ -38,9 +34,6 @@ class Modal extends React.Component {
                     </div>
                 </div>
             )
-        } else {
-            return (null)
-        }
     }
 }
 

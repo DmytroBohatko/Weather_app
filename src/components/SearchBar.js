@@ -6,21 +6,18 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 class SearchBar extends React.Component {
     constructor(props) {
         super(props);
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleClear = this.handleClear.bind(this)
     }
 
-    handleClear() {
+    handleClear = () => {
         this.handleChange(null)
     };
 
-    handleSubmit(e) {
+    handleSubmit = (e) => {
         e.preventDefault();
         this.props.onSubmit(true);
     };
 
-    handleChange(e) {
+    handleChange = (e) => {
         if (e === null) {
             this.props.onFilterChange("")
         } else {

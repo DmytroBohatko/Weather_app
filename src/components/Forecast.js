@@ -3,11 +3,10 @@ import React from "react";
 class Forecast extends React.Component {
     constructor(props) {
         super(props);
-        this.footerItem = this.footerItem.bind(this);
 
     }
 
-    footerItem(i) {
+    footerItem = (i) => {
         return (
             <div key={i} className="footer-forecast">
                 <div className="footer-item forecast-date">{this.props.foreDate[i]}</div>
@@ -18,7 +17,7 @@ class Forecast extends React.Component {
                 <div className="footer-item forecast-temp-min">{this.props.foreTempMin[i]}</div>
             </div>
         )
-    }
+    };
 
     render() {
         let footerItems = [];

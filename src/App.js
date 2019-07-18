@@ -8,8 +8,6 @@ import Wrapper from './components/Wrapper'
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.handleChange = this.handleChange.bind(this);
-        this.handleChoose = this.handleChoose.bind(this);
         this.state = {
             search: "",
             data: [],
@@ -33,8 +31,7 @@ class App extends React.Component {
     }
 
     currentWeatherAPI() {
-        const API = 'http://api.openweathermap.org/data/2.5/weather?q=' + this.state.search + '&appid=a0bf4ff8ca61f3bf5aa131971a6e7a99&units=imperial';
-        axios.get(API)
+        axios.get('http://api.openweathermap.org/data/2.5/weather?q=' + this.state.search + '&appid=a0bf4ff8ca61f3bf5aa131971a6e7a99&units=imperial')
             .then(result => this.setState({
                 currentTemp: result.data.main.temp,
                 currentHum: result.data.main.humidity,
@@ -43,13 +40,13 @@ class App extends React.Component {
     }
 
 
-    handleChange(value) {
+    handleChange = (value) => {
         this.setState({search: value});
-    }
+    };
 
-    handleChoose(city) {
+    handleChoose = (city) => {
         this.setState({search: city}, () => this.getData());
-    }
+    };
 
     getData() {
         this.currentWeatherAPI();
@@ -174,14 +171,13 @@ class App extends React.Component {
 
         return (
             <div className="main">
-                <Modal
-                    chooseCity={this.state.search}
-                    show={this.state.showModal}
-                    onCityChoose={this.handleChoose}
-                />
                 <img style={{left: (window.innerWidth - 540) / 2 - 150}} id="cloud1" src={cloud1}/>
                 <img style={{right: (window.innerWidth - 540) / 2 - 80}} id="cloud2" src={cloud2}/>
-                {this.state.showModal ? null :
+                {this.state.showModal ? <Modal
+                        chooseCity={this.state.search}
+                        onCityChoose={this.handleChoose}
+                    />
+                    :
                     <Wrapper
                         searchValue={this.state.search}
                         onMainChange={this.handleChange}
