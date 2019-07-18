@@ -1,4 +1,4 @@
-To install this application use next commands
+To install this application enter in terminal following commands
 
 `git clone https://github.com/DmytroBohatko/Weather_app.git`
 
