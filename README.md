@@ -1,8 +1,10 @@
-to install this application use next commands
+To install this application use next commands
 
-git clone https://github.com/DmytroBohatko/Weather_app.git
-cd Weather_app
-npm install
+`git clone https://github.com/DmytroBohatko/Weather_app.git`
+
+`cd Weather_app`
+
+`npm install`
 
 
 This is a simple React App which shows next parameters in selected city:
@@ -17,3 +19,5 @@ Besides basic packages I downloaded using npm :
 - axios (for API call)
 
 Here is the component structure
+
+![Alt text](src/img/cloud1.png?raw=true "Component_structure")
