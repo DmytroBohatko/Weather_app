@@ -20,4 +20,7 @@ Besides basic packages I downloaded using npm :
 
 Here is the component structure
 
-![Alt text](src/img/cloud1.png?raw=true "Component_structure")
+![Alt text](src/img/Weather_app_components.jpg?raw=true "Component_structure")
+
+
+Thank you for your attention!!!
