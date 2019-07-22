@@ -6,6 +6,10 @@ To install this application enter in terminal following commands
 
 `npm install`
 
+To launch application enter in terminal
+
+`npm start`
+
 
 This is a simple React App which shows next parameters in selected city:
 - current temperature
